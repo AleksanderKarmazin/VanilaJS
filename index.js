@@ -36,7 +36,7 @@ const model = [
 // Те переменнные которые являютя DOM  - элементами я почеяю как начинающиеся со знака доллора 
 const $site = document.querySelector('#site')
 
-
+ 
 model.forEach( block =>{
     let html = ''
     
