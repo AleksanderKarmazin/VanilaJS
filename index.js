@@ -10,12 +10,26 @@ const model = [
     {
         type: 'columns',
         value:[
-            'Line of string 1',
-            'Line of string 2',
-            'Line of string 3',
-
-
+            'Lorem ipsum dolor sit \
+            amet consectetur adipisicing elit. Culpa eum quia at \
+             optio, pariatur autem sapiente assumenda nobis esse  \
+            possimus voluptates magni voluptatem excepturi odio  \
+            ab beatae soluta, vero amet!  ',
+            'Lorem ipsum dolor sit \
+            amet consectetur adipisicing elit. Culpa eum quia at \
+             optio, pariatur autem sapiente assumenda nobis esse  \
+            possimus voluptates magni voluptatem excepturi odio  \
+            ab beatae soluta, vero amet! ',
+            'Lorem ipsum dolor sit \
+            amet consectetur adipisicing elit. Culpa eum quia at \
+             optio, pariatur autem sapiente assumenda nobis esse  \
+            possimus voluptates magni voluptatem excepturi odio  \
+            ab beatae soluta, vero amet! ',
         ]
+    },
+    {
+        type: 'img',
+        value: './assets/icon.png'
     }
 ]
  
@@ -34,13 +48,15 @@ model.forEach( block =>{
     } else if (block.type === 'columns') {
         html = columns(block)
     }
+     else if (block.type === 'img') {
+        html = img(block)
+    }
 
 
     $site.insertAdjacentHTML('beforeend', html)
 }) 
 
 // Только те функции, которые имеют ключевое слово function могут быть вызваны до того моента когда они были опеределены 
-
 function title(block) {
     return `
     <div class="row">
@@ -74,6 +90,14 @@ function columns(block) {
     return `
     <div class="row">
         ${html}
+    </div>
+    `
+}
+
+function img(block) {
+    return `
+    <div class="row">
+       <img src="${block.value}" />
     </div>
     `
 }
