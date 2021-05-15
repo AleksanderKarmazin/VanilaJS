@@ -14,6 +14,7 @@ const model = [
             'Line of string 2',
             'Line of string 3',
 
+
         ]
     }
 ]
@@ -31,7 +32,7 @@ model.forEach( block =>{
     } else if (block.type === 'text') {
         html = text(block)
     } else if (block.type === 'columns') {
-        
+        html = columns(block)
     }
 
 
@@ -56,6 +57,23 @@ function text(block) {
     <div class="col-sm">
         <p>${block.value}</p>
     </div>
+    </div>
+    `
+}
+
+function columns(block) {
+    let html = ''
+    block.value.forEach( item =>{
+        html +=  `
+        <div class="col-sm">
+        ${item}
+        </div>
+        `
+    })
+    
+    return `
+    <div class="row">
+        ${html}
     </div>
     `
 }
