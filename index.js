@@ -1,7 +1,7 @@
 const model = [
     {
         type: 'title',
-        value: 'Hellow world from JS ! '
+        value: 'Hellow world from JS!'
     },
     {
         type: 'text',
@@ -29,14 +29,7 @@ model.forEach( block =>{
         html = title(block)
         
     } else if (block.type === 'text') {
-        html = `
-        <div class="row">
-        <div class="col-sm">
-            <p>${block.value}</p>
-        </div>
-        </div>
-         
-        `
+        html = text(block)
     } else if (block.type === 'columns') {
         
     }
@@ -54,6 +47,15 @@ function title(block) {
         <h1>${block.value}</h1>
     </div>
     </div>
-    
+    `
+}
+
+function text(block) {
+    return `
+    <div class="row">
+    <div class="col-sm">
+        <p>${block.value}</p>
+    </div>
+    </div>
     `
 }
