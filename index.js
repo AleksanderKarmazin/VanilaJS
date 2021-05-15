@@ -32,7 +32,7 @@ const model = [
         value: './assets/icon.png'
     }
 ]
- 
+   
 // Те переменнные которые являютя DOM  - элементами я почеяю как начинающиеся со знака доллора 
 const $site = document.querySelector('#site')
 
