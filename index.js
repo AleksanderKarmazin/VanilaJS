@@ -26,14 +26,8 @@ model.forEach( block =>{
     let html = ''
     
     if (block.type === 'title') {
-        html = `
-        <div class="row">
-        <div class="col-sm">
-            <h1>${block.value}</h1>
-        </div>
-        </div>
+        html = title(block)
         
-        `
     } else if (block.type === 'text') {
         html = `
         <div class="row">
@@ -50,6 +44,8 @@ model.forEach( block =>{
 
     $site.insertAdjacentHTML('beforeend', html)
 }) 
+
+// Только те функции, которые имеют ключевое слово function могут быть вызваны до того моента когда они были опеределены 
 
 function title(block) {
     return `
