@@ -1,2 +1,5 @@
 error.txt
 /logs
+/dist
+/.cache
+/node_modules
